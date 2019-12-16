@@ -1,0 +1,9 @@
+# IntelliJ #
+############
+.idea/
+*.iml
+.project
+.classpath
+.settings
+**/bin/
+.metadata/
