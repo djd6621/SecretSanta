@@ -1,5 +1,10 @@
+ import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -50,6 +55,32 @@ public class SecretSantaPicker {
 
             finalList.put(firstPerson, secondPerson);
         }
+    }
+
+
+    public void saveToFile(String filename) {
+        try {
+            File file = new File(filename);
+            if(!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter writer = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(writer);
+
+            for(Map.Entry<String, String> entry : finalList.entrySet()) {
+                bw.write(entry.getKey() + "," + entry.getValue());
+                bw.newLine();
+            }
+
+            bw.close();
+            writer.close();
+            System.out.println("Finished saving mappings...");
+
+        } catch(IOException e) {
+            System.out.println("File error occurred.");
+        }
+
     }
 
     public HashMap<String, String> getFinalList() {

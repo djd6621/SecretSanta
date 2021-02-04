@@ -40,6 +40,11 @@ public class SecretSanta {
      */
     private final String QUIT = "quit";
 
+
+    /**
+     * Save command
+     */
+    private final String SAVE = "save";
     /**
      * Field holds the picker class
      */
@@ -85,6 +90,11 @@ public class SecretSanta {
         System.out.println("Successfully created secret santa mappings!");
     }
 
+
+    private void saveMap(String filename) {
+        picker.saveToFile(filename);
+    }
+
     /**
      * Main loop that handles command prompt input.
      */
@@ -119,6 +129,9 @@ public class SecretSanta {
                     break;
                 case CREATE:
                     executePicker();
+                    break;
+                case SAVE:
+                    saveMap(fields[1]);
                     break;
                 case QUIT:
                     done = true;

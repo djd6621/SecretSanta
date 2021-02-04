@@ -1,0 +1,7 @@
+lina,darek
+jennifer,daemon
+granny,jason
+darek,jennifer
+jason,jaelyn
+jaelyn,lina
+daemon,granny
