@@ -1,8 +1,0 @@
-lina,darek
-karen,lina
-darek,jaelyn
-dad,mom
-grandpa,dad
-mom,daemon
-jaelyn,karen
-daemon,grandpa
